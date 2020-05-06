@@ -7,6 +7,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import java.applet.AudioClip;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -30,7 +32,7 @@ public class NumberRace extends javax.swing.JFrame {
      */
     
     int counter = 0;
-    private int iPerdidos;
+    
     
     public NumberRace() {
         
@@ -441,6 +443,7 @@ public class NumberRace extends javax.swing.JFrame {
     private void btnStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStarActionPerformed
         // TODO add your handling code here:
         
+
         jPanel2.setEnabled(true);
         lblD1.setEnabled(true);
         lblD2.setEnabled(true);
@@ -466,11 +469,17 @@ public class NumberRace extends javax.swing.JFrame {
         lblplayers.setText("");
         lblD1.setText("");
         lblD2.setText("");
+        lblposition.setText("");
     }//GEN-LAST:event_btnagainActionPerformed
         
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
          // TODO add your handling code here:
      
+         AudioClip sonido;
+         sonido =java.applet.Applet.newAudioClip(getClass().getResource("sonido/cancion1.wav"));
+         sonido.play();
+         
+         
         Random D = new Random();
         int d1 = 0, d2 = 0;
         
@@ -501,7 +510,14 @@ public class NumberRace extends javax.swing.JFrame {
          String iPerdidos= "";
          String iJugados="";
     
-    if(int i=0; d1> d2; i++){
+    if (d1> d2){
+            
+            
+            iGanados= iGanados+1;
+            
+            lblwiner.setText(""+iGanados);
+        }
+    if( d2>d1){
         
         
         iPerdidos= iPerdidos+1;
@@ -512,13 +528,7 @@ public class NumberRace extends javax.swing.JFrame {
         iJugados=iJugados+1;
         lblposition.setText(""+ iJugados);
         
-        if (){
-            
-            
-            iGanados= iGanados+1;
-            
-            lblwiner.setText(""+iGanados);
-        }
+        
         
     }
 
@@ -609,9 +619,6 @@ public class NumberRace extends javax.swing.JFrame {
         
     
     
-    
-        
-
     }//GEN-LAST:event_button2ActionPerformed
 
     private void btontirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btontirarActionPerformed

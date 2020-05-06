@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package games;
+
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -16,7 +16,15 @@ import java.util.Scanner;
  * @author Family
  */
 public class Game {
+    public static void sonid(String[]args ){
+        
+        
+        NumberRace reproducir = new NumberRace();
+        reproducir.setVisible(true);
+         
+    }
    
+        
     ArrayList Turn_player;
     ArrayList Advanced_positions;
     ArrayList Missing_positions;
@@ -69,6 +77,7 @@ public class Game {
         // TODO code application logic here
       
         
+       
         
         //CHALLENGE 1: P I P I P I P I ...
         //CHALLENGE 2: I P I P I P I P ...
@@ -120,5 +129,15 @@ public class Game {
         System.out.println("Dice 1: " + d1);
         System.out.println("Dice 2: " + d2);   
     } 
+
+    private static class NumberRace {
+
+        public NumberRace() {
+        }
+
+        private void setVisible(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
 }
 
