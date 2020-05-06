@@ -21,31 +21,31 @@ public class imagenres {
       
           switch (vDice){
            case 1:
-                  icoImagen = new ImageIcon("images/1.png");
+                  icoImagen = new ImageIcon("images/uno.png");
                   break;
             
           case 2:
-                  icoImagen = new ImageIcon("images/2.png");
+                  icoImagen = new ImageIcon("images/dos.png");
                  break;
                  
                   
            case 3:
-                  icoImagen = new ImageIcon("images/3.png");
+                  icoImagen = new ImageIcon("images/tres.png");
                   
                   break;
             case 4:
-                  icoImagen = new ImageIcon("images/4.png");      
+                  icoImagen = new ImageIcon("images/cuatro.png");      
           
                   break;
                   
             case 5:
-                  icoImagen = new ImageIcon("images/5.png");   
+                  icoImagen = new ImageIcon("images/cinco.png");   
                   
                   break;
                   
                   
             case 6:
-                  icoImagen = new ImageIcon("images/6.png"); 
+                  icoImagen = new ImageIcon("images/seis.png"); 
                   
                   break;
       } 

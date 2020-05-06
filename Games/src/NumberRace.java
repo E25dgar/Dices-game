@@ -1,8 +1,13 @@
 
 
+import games.dices1;
+import games.imagenres;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,6 +20,8 @@ import javax.swing.JOptionPane;
  * @author Family
  */
 public class NumberRace extends javax.swing.JFrame {
+   
+
 
     
     
@@ -25,9 +32,16 @@ public class NumberRace extends javax.swing.JFrame {
      */
     
     int counter = 0;
+    private int iPerdidos;
     
     public NumberRace() {
+        
+       
+        
         initComponents();
+        
+        
+        
         setLocationRelativeTo(null);
         jPanel2.setEnabled(false);
         lblD1.setEnabled(false);
@@ -54,6 +68,13 @@ public class NumberRace extends javax.swing.JFrame {
         button1 = new java.awt.Button();
         jLabel14 = new javax.swing.JLabel();
         btontirar = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        btntirar = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -63,14 +84,17 @@ public class NumberRace extends javax.swing.JFrame {
         button2 = new java.awt.Button();
         lblplayer = new javax.swing.JLabel();
         lblplayers = new javax.swing.JLabel();
-        btntirar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        btnagain = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         cboplayer = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jButton6 = new javax.swing.JButton();
+        btnStar = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -79,14 +103,17 @@ public class NumberRace extends javax.swing.JFrame {
         lblturn = new javax.swing.JLabel();
         lblposition = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        lblperdidos = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         lblCounter = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        lblwiner = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -140,6 +167,32 @@ public class NumberRace extends javax.swing.JFrame {
             }
         });
 
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1000.jpg"))); // NOI18N
+        jLabel15.setMaximumSize(new java.awt.Dimension(800, 3333));
+        jLabel15.setMinimumSize(new java.awt.Dimension(800, 3333));
+        jLabel15.setPreferredSize(new java.awt.Dimension(800, 333));
+
+        jLabel10.setText("jLabel10");
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mesa.jpg"))); // NOI18N
+        jLabel18.setText("jLabel18");
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/parchis.jpg"))); // NOI18N
+        jLabel16.setText("jLabel16");
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dados-mesa-1.jpg"))); // NOI18N
+        jLabel17.setText("jLabel17");
+
+        btntirar.setText("Tirar");
+        btntirar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btntirarActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mesa-daddo.png"))); // NOI18N
+        jLabel26.setText("jLabel26");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Number race");
         setResizable(false);
@@ -148,19 +201,19 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 204, 102));
         jPanel1.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Number race");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(120, 40, 710, 20);
+        jLabel1.setBounds(130, 30, 710, 20);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/car64px.png"))); // NOI18N
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(400, 40, 170, 120);
+        jLabel2.setBounds(390, 30, 170, 120);
 
-        jPanel2.setBackground(new java.awt.Color(255, 51, 102));
+        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 13), new java.awt.Color(255, 0, 0)), "Play zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13))); // NOI18N
         jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.setEnabled(false);
@@ -171,17 +224,17 @@ public class NumberRace extends javax.swing.JFrame {
         lblD2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/question.png"))); // NOI18N
         lblD2.setEnabled(false);
         jPanel2.add(lblD2);
-        lblD2.setBounds(120, 60, 150, 110);
+        lblD2.setBounds(120, 100, 150, 110);
 
         lblD1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         lblD1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblD1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/question.png"))); // NOI18N
         lblD1.setEnabled(false);
         jPanel2.add(lblD1);
-        lblD1.setBounds(20, 50, 130, 130);
+        lblD1.setBounds(20, 90, 130, 130);
 
         button2.setActionCommand("Play");
-        button2.setBackground(new java.awt.Color(0, 153, 255));
+        button2.setBackground(new java.awt.Color(0, 204, 51));
         button2.setEnabled(false);
         button2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         button2.setForeground(new java.awt.Color(0, 0, 0));
@@ -192,7 +245,7 @@ public class NumberRace extends javax.swing.JFrame {
             }
         });
         jPanel2.add(button2);
-        button2.setBounds(20, 200, 110, 30);
+        button2.setBounds(20, 260, 230, 50);
 
         lblplayer.setBackground(new java.awt.Color(51, 153, 255));
         lblplayer.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -201,38 +254,34 @@ public class NumberRace extends javax.swing.JFrame {
         lblplayer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblplayer.setEnabled(false);
         jPanel2.add(lblplayer);
-        lblplayer.setBounds(70, 230, 80, 30);
+        lblplayer.setBounds(60, 320, 80, 30);
 
         lblplayers.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lblplayers.setText("#");
         lblplayers.setEnabled(false);
         jPanel2.add(lblplayers);
-        lblplayers.setBounds(140, 240, 110, 16);
+        lblplayers.setBounds(140, 330, 110, 16);
 
-        btntirar.setText("Tirar");
-        btntirar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btntirarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btntirar);
-        btntirar.setBounds(170, 200, 61, 25);
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mesa-daddo.png"))); // NOI18N
+        jLabel20.setText("jLabel20");
+        jPanel2.add(jLabel20);
+        jLabel20.setBounds(0, 20, 290, 380);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(340, 210, 290, 280);
+        jPanel2.setBounds(10, 130, 270, 400);
         jPanel2.getAccessibleContext().setAccessibleName("Play zone\n"); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 0));
-        jButton1.setText("Try again");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnagain.setBackground(new java.awt.Color(255, 51, 0));
+        btnagain.setText("Try again");
+        btnagain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnagainActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(340, 640, 300, 40);
+        jPanel1.add(btnagain);
+        btnagain.setBounds(10, 630, 270, 40);
 
-        jPanel3.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Config zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13))); // NOI18N
         jPanel3.setLayout(null);
 
@@ -240,7 +289,7 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel3.add(jLabel3);
         jLabel3.setBounds(20, 30, 210, 30);
 
-        cboplayer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "rojo" }));
+        cboplayer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
         jPanel3.add(cboplayer);
         cboplayer.setBounds(20, 70, 280, 40);
 
@@ -252,63 +301,82 @@ public class NumberRace extends javax.swing.JFrame {
         jPanel3.add(jComboBox2);
         jComboBox2.setBounds(20, 180, 280, 40);
 
-        jButton6.setBackground(new java.awt.Color(255, 204, 102));
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrows.png"))); // NOI18N
-        jButton6.setBorder(null);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnStar.setBackground(new java.awt.Color(255, 51, 0));
+        btnStar.setForeground(new java.awt.Color(255, 255, 255));
+        btnStar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/multimedia.png"))); // NOI18N
+        btnStar.setBorder(null);
+        btnStar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnStarActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton6);
-        jButton6.setBounds(130, 300, 70, 70);
+        jPanel3.add(btnStar);
+        btnStar.setBounds(140, 290, 70, 70);
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mesa-daddo.png"))); // NOI18N
+        jPanel3.add(jLabel19);
+        jLabel19.setBounds(0, 20, 330, 380);
+
+        jLabel24.setText("jLabel24");
+        jPanel3.add(jLabel24);
+        jLabel24.setBounds(60, 300, 48, 16);
+
+        jLabel25.setText("jLabel25");
+        jPanel3.add(jLabel25);
+        jLabel25.setBounds(50, 270, 48, 16);
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(10, 210, 310, 390);
+        jPanel3.setBounds(300, 130, 330, 400);
 
-        jPanel4.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel4.setBackground(new java.awt.Color(204, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Scores zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13))); // NOI18N
         jPanel4.setLayout(null);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 204));
         jLabel5.setText("Turn player:");
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(18, 55, 112, 16);
+        jLabel5.setBounds(10, 60, 112, 16);
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel6.setText("Advanced positions: ");
         jPanel4.add(jLabel6);
-        jLabel6.setBounds(18, 89, 118, 16);
+        jLabel6.setBounds(10, 130, 136, 16);
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel7.setText("Missing positions:");
         jPanel4.add(jLabel7);
-        jLabel7.setBounds(18, 134, 118, 16);
+        jLabel7.setBounds(10, 190, 118, 16);
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel8.setText("Returns:");
         jPanel4.add(jLabel8);
-        jLabel8.setBounds(18, 168, 118, 29);
+        jLabel8.setBounds(20, 250, 118, 29);
 
         lblturn.setText("#");
         jPanel4.add(lblturn);
-        lblturn.setBounds(163, 55, 149, 16);
+        lblturn.setBounds(160, 60, 100, 16);
 
         lblposition.setText("#");
         jPanel4.add(lblposition);
-        lblposition.setBounds(163, 89, 149, 16);
+        lblposition.setBounds(160, 130, 100, 16);
 
         jLabel11.setText("#");
         jPanel4.add(jLabel11);
-        jLabel11.setBounds(140, 140, 149, 16);
+        jLabel11.setBounds(160, 190, 100, 16);
 
-        jLabel12.setText("#");
-        jPanel4.add(jLabel12);
-        jLabel12.setBounds(140, 170, 149, 16);
+        lblperdidos.setText("#");
+        jPanel4.add(lblperdidos);
+        lblperdidos.setBounds(160, 260, 100, 16);
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mesa-daddo.png"))); // NOI18N
+        jLabel21.setText("jLabel21");
+        jPanel4.add(jLabel21);
+        jLabel21.setBounds(0, 20, 270, 380);
 
         jPanel1.add(jPanel4);
-        jPanel4.setBounds(640, 210, 270, 280);
+        jPanel4.setBounds(640, 130, 270, 400);
 
-        jPanel7.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel7.setBackground(new java.awt.Color(204, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pairs", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13))); // NOI18N
         jPanel7.setLayout(null);
 
@@ -316,40 +384,48 @@ public class NumberRace extends javax.swing.JFrame {
         lblCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCounter.setText("0");
         jPanel7.add(lblCounter);
-        lblCounter.setBounds(90, 0, 130, 130);
+        lblCounter.setBounds(100, 50, 130, 130);
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mesa-daddo.png"))); // NOI18N
+        jLabel22.setText("jLabel22");
+        jPanel7.add(jLabel22);
+        jLabel22.setBounds(0, 20, 330, 210);
 
         jPanel1.add(jPanel7);
-        jPanel7.setBounds(340, 500, 290, 110);
+        jPanel7.setBounds(300, 550, 330, 220);
 
         jButton3.setBackground(new java.awt.Color(255, 51, 0));
         jButton3.setText("Config params");
         jPanel1.add(jButton3);
-        jButton3.setBounds(20, 640, 300, 40);
+        jButton3.setBounds(10, 730, 270, 40);
 
         jButton4.setBackground(new java.awt.Color(255, 51, 0));
         jButton4.setText("About Of");
         jPanel1.add(jButton4);
-        jButton4.setBounds(660, 640, 260, 40);
+        jButton4.setBounds(10, 680, 270, 40);
 
-        jPanel8.setBackground(new java.awt.Color(102, 204, 255));
-        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Winner", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel8.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Winner", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13))); // NOI18N
         jPanel8.setLayout(null);
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("?");
-        jPanel8.add(jLabel13);
-        jLabel13.setBounds(50, 0, 130, 110);
+        lblwiner.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        lblwiner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblwiner.setText("?");
+        jPanel8.add(lblwiner);
+        lblwiner.setBounds(70, 50, 130, 110);
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mesa-daddo.png"))); // NOI18N
+        jLabel23.setText("jLabel23");
+        jPanel8.add(jLabel23);
+        jLabel23.setBounds(-580, 20, 840, 200);
 
         jPanel1.add(jPanel8);
-        jPanel8.setBounds(650, 500, 260, 110);
+        jPanel8.setBounds(650, 550, 260, 220);
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1000.jpg"))); // NOI18N
-        jLabel15.setMaximumSize(new java.awt.Dimension(800, 3333));
-        jLabel15.setMinimumSize(new java.awt.Dimension(800, 3333));
-        jLabel15.setPreferredSize(new java.awt.Dimension(800, 333));
-        jPanel1.add(jLabel15);
-        jLabel15.setBounds(-20, 0, 950, 810);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoplay.jpg"))); // NOI18N
+        jLabel9.setText("jLabel9");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(0, 0, 930, 2000);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 790));
 
@@ -364,7 +440,7 @@ public class NumberRace extends javax.swing.JFrame {
       
     }//GEN-LAST:event_button1ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStarActionPerformed
         // TODO add your handling code here:
         
         jPanel2.setEnabled(true);
@@ -377,11 +453,11 @@ public class NumberRace extends javax.swing.JFrame {
         String letra = "";
         letra = letra+cboplayer.getSelectedItem().toString();
         lblplayers.setText(letra);
+        lblturn.setText(letra);
         
-        
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnStarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnagainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagainActionPerformed
         // TODO add your handling code here:
 
         //lblD1.setText("?");
@@ -393,14 +469,25 @@ public class NumberRace extends javax.swing.JFrame {
         lblCounter.setText("0");
         lblturn.setText("");
         lblplayers.setText("");
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+        lblD1.setText("");
+        lblD2.setText("");
+    }//GEN-LAST:event_btnagainActionPerformed
         
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
          // TODO add your handling code here:
      
         Random D = new Random();
         int d1 = 0, d2 = 0;
+        
+        int iGanados = 0;
+        
+    
+    
+    
+
+   
+        
+        
 
         d1 = (int)(D.nextDouble()* 6 + 1);
         d2 = (int)(D.nextDouble()* 6 + 1);
@@ -408,57 +495,78 @@ public class NumberRace extends javax.swing.JFrame {
         counter = counter + (d1 + d2);
         lblCounter.setText(Integer.toString(counter));
         
+       
+        
+        
+        
         //lblD1.setText(Integer.toString(d1));
         //lblD2.setText(Integer.toString(d2));
 
         switch (d1){
             case 1:
-            lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-01.gif")));
-            
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-01.gif" )));
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/uno.png" )));
             break;
 
             case 2:
             lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-02.gif")));
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/dos.png" )));
+            
             break;
 
             case 3:
             lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-03.gif")));
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/tres.png" )));
             break;
 
             case 4:
-            lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-04.gif")));
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-04.gif" )));
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/cuatro.png" )));
             break;
 
             case 5:
             lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-05.gif")));
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/cinco.png" )));
             break;
 
             case 6:
+            
+             
             lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-06.gif")));
-            break;
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/seis.png" )));
+               
+               
+               break;
         }
 
         switch(d2){
             case 1:
-            lblD2.setIcon(new ImageIcon(getClass().getResource("images/dados-01.gif")));
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/dados-01.gif" )));
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/uno.png" )));
 
             case 2:
-            lblD2.setIcon(new ImageIcon(getClass().getResource("images/dos.png")));
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/dados-02.gif")));
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/dos.png" )));
 
             case 3:
-            lblD2.setIcon(new ImageIcon(getClass().getResource("images/tres.png")));
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/dados-03.gif")));
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/tres.png" )));
             break;
 
             case 4:
-            lblD2.setIcon(new ImageIcon(getClass().getResource("images/cuatro.png")));
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/dados-04.gif" )));
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/cuatro.png" )));
             break;
 
             case 5:
-            lblD2.setIcon(new ImageIcon(getClass().getResource("images/cinco.png")));
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/dados-05.gif")));
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/cinco.png" )));
             break;
 
             case 6:
-            lblD2.setIcon(new ImageIcon(getClass().getResource("images/seis.png")));
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/dados-06.gif")));
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/seis.png" )));
+               
             break;
         }
 
@@ -476,25 +584,7 @@ public class NumberRace extends javax.swing.JFrame {
     }//GEN-LAST:event_btontirarActionPerformed
 
     private void btntirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntirarActionPerformed
-        // TODO add your handling code here:
-        
-         Random D = new Random();
-        int d1 = 0, d2 = 0;
 
-        d1 = (int)(D.nextDouble()* 6 + 1);
-        d2 = (int)(D.nextDouble()* 6 + 1);
-
-        counter = counter + (d1 + d2);
-        lblCounter.setText(Integer.toString(counter));
-        
-        
-        //dices1 objDices = new dices1();
-        //imagenres objImag1 = new imagenres();
-        //int  num1 = objDices.calculanumero();
-        
-        //lblD1.setText(""+num1);
-        
-        lblDado.setIcon(objImag1.pngDiceR(num1));
         
         
     }//GEN-LAST:event_btntirarActionPerformed
@@ -535,31 +625,42 @@ public class NumberRace extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnStar;
+    private javax.swing.JButton btnagain;
     private javax.swing.JButton btntirar;
     private javax.swing.JButton btontirar;
     private java.awt.Button button1;
     private java.awt.Button button2;
     private javax.swing.JComboBox<String> cboplayer;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -571,9 +672,11 @@ public class NumberRace extends javax.swing.JFrame {
     private javax.swing.JLabel lblCounter;
     private javax.swing.JLabel lblD1;
     private javax.swing.JLabel lblD2;
+    private javax.swing.JLabel lblperdidos;
     private javax.swing.JLabel lblplayer;
     private javax.swing.JLabel lblplayers;
     private javax.swing.JLabel lblposition;
     private javax.swing.JLabel lblturn;
+    private javax.swing.JLabel lblwiner;
     // End of variables declaration//GEN-END:variables
 }
