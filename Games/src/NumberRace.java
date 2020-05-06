@@ -1,7 +1,5 @@
 
 
-import games.dices1;
-import games.imagenres;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.util.Random;
@@ -450,10 +448,7 @@ public class NumberRace extends javax.swing.JFrame {
         lblplayer.setEnabled(true);
         lblplayers.setEnabled(true);
         
-        String letra = "";
-        letra = letra+cboplayer.getSelectedItem().toString();
-        lblplayers.setText(letra);
-        lblturn.setText(letra);
+     
         
     }//GEN-LAST:event_btnStarActionPerformed
 
@@ -479,16 +474,55 @@ public class NumberRace extends javax.swing.JFrame {
         Random D = new Random();
         int d1 = 0, d2 = 0;
         
-        int iGanados = 0;
+        String Turn_player="";
+        Turn_player = Turn_player+cboplayer.getSelectedItem().toString();
+        lblplayers.setText("" + Turn_player);
+        lblturn.setText("" + Turn_player);
         
     
+        String Advanced_positions="";
+        Advanced_positions = Advanced_positions+cboplayer.getSelectedItem().toString();
+        lblplayers.setText("" + Advanced_positions);
+        lblposition.setText("" + Advanced_positions);
+        
+        String Missing_positions="";
+        Missing_positions = Missing_positions+cboplayer.getSelectedItem().toString();
+        lblplayers.setText("" + Missing_positions);
+        lblposition.setText("" + Missing_positions);
+        
+       
+        
+        String Returns="";
+        Returns = Returns+cboplayer.getSelectedItem().toString();
+        lblplayers.setText("" + Returns);
+        lblposition.setText("" + Returns);
+        
+         String iGanados = "";
+         String iPerdidos= "";
+         String iJugados="";
     
-    
+    if(int i=0; d1> d2; i++){
+        
+        
+        iPerdidos= iPerdidos+1;
+        
+        lblperdidos.setText(""+iPerdidos);
+    }else{
+        
+        iJugados=iJugados+1;
+        lblposition.setText(""+ iJugados);
+        
+        if (){
+            
+            
+            iGanados= iGanados+1;
+            
+            lblwiner.setText(""+iGanados);
+        }
+        
+    }
 
-   
-        
-        
-
+      
         d1 = (int)(D.nextDouble()* 6 + 1);
         d2 = (int)(D.nextDouble()* 6 + 1);
 
@@ -573,8 +607,9 @@ public class NumberRace extends javax.swing.JFrame {
         if (d1 == 1 && d2 == 1){
         }
         
-        
-      
+    
+    
+    
         
 
     }//GEN-LAST:event_button2ActionPerformed
@@ -679,4 +714,18 @@ public class NumberRace extends javax.swing.JFrame {
     private javax.swing.JLabel lblturn;
     private javax.swing.JLabel lblwiner;
     // End of variables declaration//GEN-END:variables
+
+    private static class objDado {
+
+        private static int fCalculaValor() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private static boolean fCalcularPartidaGanada(int iNumero1, int iNumero2) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public objDado() {
+        }
+    }
 }
