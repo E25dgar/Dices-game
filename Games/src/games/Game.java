@@ -5,6 +5,7 @@
  */
 package games;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -14,13 +15,60 @@ import java.util.Scanner;
  *
  * @author Family
  */
-public class Games {
+public class Game {
+   
+    ArrayList Turn_player;
+    ArrayList Advanced_positions;
+    ArrayList Missing_positions;
+    ArrayList Returns;
 
+    public Game(ArrayList Turn_player, ArrayList Advanced_positions, ArrayList Missing_positions, ArrayList Returns) {
+        this.Turn_player = Turn_player;
+        this.Advanced_positions = Advanced_positions;
+        this.Missing_positions = Missing_positions;
+        this.Returns = Returns;
+    }
+
+    public ArrayList getTurn_player() {
+        return Turn_player;
+    }
+
+    public void setTurn_player(ArrayList Turn_player) {
+        this.Turn_player = Turn_player;
+    }
+
+    public ArrayList getAdvanced_positions() {
+        return Advanced_positions;
+    }
+
+    public void setAdvanced_positions(ArrayList Advanced_positions) {
+        this.Advanced_positions = Advanced_positions;
+    }
+
+    public ArrayList getMissing_positions() {
+        return Missing_positions;
+    }
+
+    public void setMissing_positions(ArrayList Missing_positions) {
+        this.Missing_positions = Missing_positions;
+    }
+
+    public ArrayList getReturns() {
+        return Returns;
+    }
+
+    public void setReturns(ArrayList Returns) {
+        this.Returns = Returns;
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+      
+        
         
         //CHALLENGE 1: P I P I P I P I ...
         //CHALLENGE 2: I P I P I P I P ...
@@ -73,13 +121,4 @@ public class Games {
         System.out.println("Dice 2: " + d2);   
     } 
 }
-
-
-
-
-
-
-
-
-
 

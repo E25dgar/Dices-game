@@ -1,4 +1,5 @@
 
+
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -15,6 +16,10 @@ import javax.swing.JOptionPane;
  */
 public class NumberRace extends javax.swing.JFrame {
 
+    
+    
+     private String numeros[];
+       
     /**
      * Creates new form NumberRace
      */
@@ -23,6 +28,14 @@ public class NumberRace extends javax.swing.JFrame {
     
     public NumberRace() {
         initComponents();
+        setLocationRelativeTo(null);
+        jPanel2.setEnabled(false);
+        lblD1.setEnabled(false);
+        lblD2.setEnabled(false);
+        button2.setEnabled(false);
+        lblplayer.setEnabled(false);
+        lblplayers.setEnabled(false);
+        
     }
 
     /**
@@ -34,62 +47,182 @@ public class NumberRace extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        button1 = new java.awt.Button();
+        jLabel14 = new javax.swing.JLabel();
+        btontirar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblD2 = new javax.swing.JLabel();
         lblD1 = new javax.swing.JLabel();
-        button1 = new java.awt.Button();
+        button2 = new java.awt.Button();
+        lblplayer = new javax.swing.JLabel();
+        lblplayers = new javax.swing.JLabel();
+        btntirar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        cboplayer = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jButton6 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        lblturn = new javax.swing.JLabel();
+        lblposition = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
         lblCounter = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Number race");
-        setResizable(false);
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 102));
-        jPanel1.setLayout(null);
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Number race");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 90, 710, 20);
+        jButton2.setBackground(new java.awt.Color(255, 0, 51));
+        jButton2.setText("Start game");
+        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/car64px.png"))); // NOI18N
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(280, 0, 160, 120);
+        jButton5.setBackground(new java.awt.Color(255, 204, 102));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/multimedia.png"))); // NOI18N
+        jButton5.setBorder(null);
 
-        jPanel2.setBackground(new java.awt.Color(255, 204, 102));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Dices"));
-        jPanel2.setLayout(null);
-
-        lblD2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        lblD2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblD2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/question.png"))); // NOI18N
-        jPanel2.add(lblD2);
-        lblD2.setBounds(60, 150, 90, 83);
-
-        lblD1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        lblD1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblD1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/question.png"))); // NOI18N
-        jPanel2.add(lblD1);
-        lblD1.setBounds(60, 40, 90, 83);
-
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(40, 130, 210, 290);
-
+        button1.setActionCommand("as");
+        button1.setBackground(new java.awt.Color(0, 204, 102));
+        button1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        button1.setEnabled(false);
+        button1.setForeground(new java.awt.Color(0, 0, 204));
         button1.setLabel("Play");
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);
             }
         });
-        jPanel1.add(button1);
-        button1.setBounds(40, 440, 210, 40);
 
+        jLabel14.setText("jLabel14");
+
+        btontirar.setBackground(new java.awt.Color(51, 153, 255));
+        btontirar.setText("Tirar");
+        btontirar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btontirarActionPerformed(evt);
+            }
+        });
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Number race");
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 204, 102));
+        jPanel1.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Number race");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(120, 40, 710, 20);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/car64px.png"))); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(400, 40, 170, 120);
+
+        jPanel2.setBackground(new java.awt.Color(255, 51, 102));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 13), new java.awt.Color(255, 0, 0)), "Play zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13))); // NOI18N
+        jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel2.setEnabled(false);
+        jPanel2.setLayout(null);
+
+        lblD2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        lblD2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblD2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/question.png"))); // NOI18N
+        lblD2.setEnabled(false);
+        jPanel2.add(lblD2);
+        lblD2.setBounds(120, 60, 150, 110);
+
+        lblD1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        lblD1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblD1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/question.png"))); // NOI18N
+        lblD1.setEnabled(false);
+        jPanel2.add(lblD1);
+        lblD1.setBounds(20, 50, 130, 130);
+
+        button2.setActionCommand("Play");
+        button2.setBackground(new java.awt.Color(0, 153, 255));
+        button2.setEnabled(false);
+        button2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        button2.setForeground(new java.awt.Color(0, 0, 0));
+        button2.setLabel("Play");
+        button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(button2);
+        button2.setBounds(20, 200, 110, 30);
+
+        lblplayer.setBackground(new java.awt.Color(51, 153, 255));
+        lblplayer.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lblplayer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblplayer.setText("Player:");
+        lblplayer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblplayer.setEnabled(false);
+        jPanel2.add(lblplayer);
+        lblplayer.setBounds(70, 230, 80, 30);
+
+        lblplayers.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lblplayers.setText("#");
+        lblplayers.setEnabled(false);
+        jPanel2.add(lblplayers);
+        lblplayers.setBounds(140, 240, 110, 16);
+
+        btntirar.setText("Tirar");
+        btntirar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btntirarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btntirar);
+        btntirar.setBounds(170, 200, 61, 25);
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(340, 210, 290, 280);
+        jPanel2.getAccessibleContext().setAccessibleName("Play zone\n"); // NOI18N
+
+        jButton1.setBackground(new java.awt.Color(255, 51, 0));
         jButton1.setText("Try again");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,26 +230,128 @@ public class NumberRace extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(40, 500, 210, 50);
+        jButton1.setBounds(340, 640, 300, 40);
+
+        jPanel3.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Config zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13))); // NOI18N
+        jPanel3.setLayout(null);
+
+        jLabel3.setText("Number of players:");
+        jPanel3.add(jLabel3);
+        jLabel3.setBounds(20, 30, 210, 30);
+
+        cboplayer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "rojo" }));
+        jPanel3.add(cboplayer);
+        cboplayer.setBounds(20, 70, 280, 40);
+
+        jLabel4.setText("Level:");
+        jPanel3.add(jLabel4);
+        jLabel4.setBounds(20, 140, 130, 20);
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Basic", "Intermediate", "Advanced" }));
+        jPanel3.add(jComboBox2);
+        jComboBox2.setBounds(20, 180, 280, 40);
+
+        jButton6.setBackground(new java.awt.Color(255, 204, 102));
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrows.png"))); // NOI18N
+        jButton6.setBorder(null);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton6);
+        jButton6.setBounds(130, 300, 70, 70);
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(10, 210, 310, 390);
+
+        jPanel4.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Scores zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13))); // NOI18N
+        jPanel4.setLayout(null);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel5.setText("Turn player:");
+        jPanel4.add(jLabel5);
+        jLabel5.setBounds(18, 55, 112, 16);
+
+        jLabel6.setText("Advanced positions: ");
+        jPanel4.add(jLabel6);
+        jLabel6.setBounds(18, 89, 118, 16);
+
+        jLabel7.setText("Missing positions:");
+        jPanel4.add(jLabel7);
+        jLabel7.setBounds(18, 134, 118, 16);
+
+        jLabel8.setText("Returns:");
+        jPanel4.add(jLabel8);
+        jLabel8.setBounds(18, 168, 118, 29);
+
+        lblturn.setText("#");
+        jPanel4.add(lblturn);
+        lblturn.setBounds(163, 55, 149, 16);
+
+        lblposition.setText("#");
+        jPanel4.add(lblposition);
+        lblposition.setBounds(163, 89, 149, 16);
+
+        jLabel11.setText("#");
+        jPanel4.add(jLabel11);
+        jLabel11.setBounds(140, 140, 149, 16);
+
+        jLabel12.setText("#");
+        jPanel4.add(jLabel12);
+        jLabel12.setBounds(140, 170, 149, 16);
+
+        jPanel1.add(jPanel4);
+        jPanel4.setBounds(640, 210, 270, 280);
+
+        jPanel7.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pairs", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13))); // NOI18N
+        jPanel7.setLayout(null);
 
         lblCounter.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         lblCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCounter.setText("0");
-        jPanel1.add(lblCounter);
-        lblCounter.setBounds(400, 150, 200, 200);
+        jPanel7.add(lblCounter);
+        lblCounter.setBounds(90, 0, 130, 130);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jPanel1.add(jPanel7);
+        jPanel7.setBounds(340, 500, 290, 110);
+
+        jButton3.setBackground(new java.awt.Color(255, 51, 0));
+        jButton3.setText("Config params");
+        jPanel1.add(jButton3);
+        jButton3.setBounds(20, 640, 300, 40);
+
+        jButton4.setBackground(new java.awt.Color(255, 51, 0));
+        jButton4.setText("About Of");
+        jPanel1.add(jButton4);
+        jButton4.setBounds(660, 640, 260, 40);
+
+        jPanel8.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Winner", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel8.setLayout(null);
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("?");
+        jPanel8.add(jLabel13);
+        jLabel13.setBounds(50, 0, 130, 110);
+
+        jPanel1.add(jPanel8);
+        jPanel8.setBounds(650, 500, 260, 110);
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1000.jpg"))); // NOI18N
+        jLabel15.setMaximumSize(new java.awt.Dimension(800, 3333));
+        jLabel15.setMinimumSize(new java.awt.Dimension(800, 3333));
+        jLabel15.setPreferredSize(new java.awt.Dimension(800, 333));
+        jPanel1.add(jLabel15);
+        jLabel15.setBounds(-20, 0, 950, 810);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 790));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -124,101 +359,145 @@ public class NumberRace extends javax.swing.JFrame {
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
         //Dices
+    
+        
+      
+    }//GEN-LAST:event_button1ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        
+        jPanel2.setEnabled(true);
+        lblD1.setEnabled(true);
+        lblD2.setEnabled(true);
+        button2.setEnabled(true);
+        lblplayer.setEnabled(true);
+        lblplayers.setEnabled(true);
+        
+        String letra = "";
+        letra = letra+cboplayer.getSelectedItem().toString();
+        lblplayers.setText(letra);
+        
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+
+        //lblD1.setText("?");
+        //lblD2.setText("?");
+
+        lblD1.setIcon(new ImageIcon(getClass().getResource("images/question.png")));
+        lblD2.setIcon(new ImageIcon(getClass().getResource("images/question.png")));
+
+        lblCounter.setText("0");
+        lblturn.setText("");
+        lblplayers.setText("");
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+        
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+         // TODO add your handling code here:
+     
         Random D = new Random();
         int d1 = 0, d2 = 0;
-        
+
         d1 = (int)(D.nextDouble()* 6 + 1);
         d2 = (int)(D.nextDouble()* 6 + 1);
-        
-        
+
         counter = counter + (d1 + d2);
         lblCounter.setText(Integer.toString(counter));
         
         //lblD1.setText(Integer.toString(d1));
         //lblD2.setText(Integer.toString(d2));
-        
+
         switch (d1){
             case 1:
-                lblD1.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
-                break;
-                
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-01.gif")));
+            
+            break;
+
             case 2:
-                lblD1.setIcon(new ImageIcon(getClass().getResource("images/2.png")));
-                break;
-                
-                
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-02.gif")));
+            break;
+
             case 3:
-                lblD1.setIcon(new ImageIcon(getClass().getResource("images/3.png")));
-                break;     
-                
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-03.gif")));
+            break;
+
             case 4:
-                lblD1.setIcon(new ImageIcon(getClass().getResource("images/4.png")));
-                break;
-                
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-04.gif")));
+            break;
+
             case 5:
-                lblD1.setIcon(new ImageIcon(getClass().getResource("images/5.png")));
-                break;    
-                
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-05.gif")));
+            break;
+
             case 6:
-                lblD1.setIcon(new ImageIcon(getClass().getResource("images/6.png")));
-                break;
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/dados-06.gif")));
+            break;
         }
-        
+
         switch(d2){
             case 1:
-                lblD2.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
-                
-                
-                
-            case 2:
-                lblD2.setIcon(new ImageIcon(getClass().getResource("images/2.png")));    
-            
-            
-            case 3:
-                lblD2.setIcon(new ImageIcon(getClass().getResource("images/3.png")));
-                break;
-                
-                
-            case 4:
-                lblD2.setIcon(new ImageIcon(getClass().getResource("images/4.png")));     
-                break;
-                
-            case 5:
-                lblD2.setIcon(new ImageIcon(getClass().getResource("images/5.png")));    
-                break;
-                
-            case 6:
-                lblD2.setIcon(new ImageIcon(getClass().getResource("images/6.png")));
-                break; 
-        }
-        
-        if (d1 == 1 && d2 == 1){
-            
-            JOptionPane.showMessageDialog(null, ":::YOU WIN :::");
-            
-            
-        }
-        
-        
-        
-        
-        
-        
-        
-    }//GEN-LAST:event_button1ActionPerformed
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/dados-01.gif")));
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+            case 2:
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/dos.png")));
+
+            case 3:
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/tres.png")));
+            break;
+
+            case 4:
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/cuatro.png")));
+            break;
+
+            case 5:
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/cinco.png")));
+            break;
+
+            case 6:
+            lblD2.setIcon(new ImageIcon(getClass().getResource("images/seis.png")));
+            break;
+        }
+
+        if (d1 == 1 && d2 == 1){
+        }
+        
+        
+      
+        
+
+    }//GEN-LAST:event_button2ActionPerformed
+
+    private void btontirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btontirarActionPerformed
+        // TODO add your handling code here:   
+    }//GEN-LAST:event_btontirarActionPerformed
+
+    private void btntirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntirarActionPerformed
         // TODO add your handling code here:
         
-        //lblD1.setText("?");
-        //lblD2.setText("?");
+         Random D = new Random();
+        int d1 = 0, d2 = 0;
+
+        d1 = (int)(D.nextDouble()* 6 + 1);
+        d2 = (int)(D.nextDouble()* 6 + 1);
+
+        counter = counter + (d1 + d2);
+        lblCounter.setText(Integer.toString(counter));
         
-        lblD1.setIcon(new ImageIcon(getClass().getResource("images/question.png")));
-        lblD2.setIcon(new ImageIcon(getClass().getResource("images/question.png")));
         
-        lblCounter.setText("0");
+        //dices1 objDices = new dices1();
+        //imagenres objImag1 = new imagenres();
+        //int  num1 = objDices.calculanumero();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+        //lblD1.setText(""+num1);
+        
+        lblDado.setIcon(objImag1.pngDiceR(num1));
+        
+        
+    }//GEN-LAST:event_btntirarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,14 +535,45 @@ public class NumberRace extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btntirar;
+    private javax.swing.JButton btontirar;
     private java.awt.Button button1;
+    private java.awt.Button button2;
+    private javax.swing.JComboBox<String> cboplayer;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JLabel lblCounter;
     private javax.swing.JLabel lblD1;
     private javax.swing.JLabel lblD2;
+    private javax.swing.JLabel lblplayer;
+    private javax.swing.JLabel lblplayers;
+    private javax.swing.JLabel lblposition;
+    private javax.swing.JLabel lblturn;
     // End of variables declaration//GEN-END:variables
 }
